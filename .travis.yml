@@ -1,0 +1,21 @@
+language: go
+
+env:
+  global:
+    - secure: pvMBiOXwEAsxZXdCjksUce4BJ/B6x2Dmt/CtUir89AEr5l1v+D/nt7aG1/Crvt8n9V6JUpjAIeIRJRfZiHWG35SvWSc4rs18uUhRK0QadKIqMXHZYnUARNK20dvw1HJg8uItfaiYMgbyvq0NGL5u8VucqRKBizIq8edhvjz0br4ANc9vtIy6n4iIJGNFomd3R72OF2h2+doh4abCx6HaI09Nxzwv+PE46pIOPMZkbx3KNR5ctKo9JgpP/I90+PvWJ1nlrbZzcQUhRa0exwgb8V9Rgss2LQ7ea4KwsLV6KZv4upI/ttJ3m7B3RbIUmPMaapFRmxKF2V7oCv1y5iBEv5W/xpPtNq0utFWapaaBC0VF8deCkj+8v0zi/6jd/UNmiPUdD4j/Xm+5ZoYkTg2tCMuN4Iqv4qdXMgPEIbmnwLC9z3sMJ67JEFnBm0zMFtg8fzrEEwsBWySxOMjiY8/aAafIV7+HC7R1h2BOUC+HRqZuvUE5yZh9Pvk2lPZcn2z5X0k18qvQy/pZJkhFf3D6xyEuFc+MhOr4xdM1jvwozwMjkzImEziIHIwTfNdlm5lYrYK8X5RZsfPYWn4y7a9t4ssOEq2Rp/OZ6jsFXU5GlqDyQrF3udJ4+XtWMr+WYBIJhMRb4bYktzMIouFBsnlHShQlp7OTmF7OufZa+P57nHQ=
+    - secure: jgBPzMMIIJFQq+6iAKGnsqJj0T4QTaSXnfy3z7lOkJfg368ejiNB1gj+Gm5XLLYQJEVlnlMBF5uw8/wHGXudTJKtklKH47CTEjtWVv8c+g/iIcsB8Z8d7pBeRMbZ1XHxN4M5kq4XyHLIyZutl7NlL40ucAyEkxfvFCBkSn9pb2WUC69QjydSrwT513Mo5GudC6GwjkFZyOeSgzFRCbzbmwtVh4CS1xrgGjeXeVUTbznFKbP5+lccVuN1WDP8Vt8GTipecJhff2xasaddHJPOfc0xS9YfJSB6Uc1xrr06ZxSwso0tmSPIp1vJsTIKHnVAi9anZ2pnyplfFIKu4jA1LfMWz0txWtuegfK0rbiiQm52Et0VmqAAOWJYa2SnE3QI7y0AzOtb8ECCFQbeTE4O7Jrty2dcYBgg1cX5zeG6V//QFveviA7Mh1UsmeHTXb4mIAZhOd9De6csgR2tKmroEcTb5PoBdUu1+eJNLacQV80ynHjejstdZY6KORWHN9yWZ0plY5sTUI0Om59Wne+K9G4djhV3IaYieQ6bpFOZT9pPnJkMiUODFl18PzkslJKJjk5U0Kceiy524K5J+E3QdLCO6b7+cVNG3NXYeJ9CKtfXSjoQMQeWX5viGK7BdHfdhO33rtFTZkUo+bb8ydnZua0vBc9mvrXW/4jY83QENdE=
+
+install:
+  - wget  https://github.com/gohugoio/hugo/releases/download/v0.40.3/hugo_0.40.3_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+
+script:
+  - hugo
+
+deploy:
+  provider: gcs
+  access_key_id: ACCESS_KEY_ID
+  secret_access_key: SECRET_ACCESS_KEY
+  bucket: jacobpleiness-test
+  skip_cleanup: true
+  local-dir: "/public"
