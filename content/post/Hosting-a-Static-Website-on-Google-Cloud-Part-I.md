@@ -1,7 +1,7 @@
 ---
 title: "Hosting a Static Website on Google Cloud: Part I"
 date: 2018-03-27T16:05:48-04:00
-draft: true
+draft: false
 tags: ["google cloud", "cloud storage", "hugo", "CI", "terraform", "cloudflare"]
 categories: ["DevOps"]
 
