@@ -1,0 +1,14 @@
+baseURL = 'https://jacobpleiness.com/'
+languageCode = 'en-us'
+title = 'Jacob Pleiness'
+theme = 'nostyleplease'
+
+[params]
+  description = "Software Engineer working on a mix of systems programming and site reliability engineering."
+  favicon = "favicon.ico"
+
+  [params.theme_config]
+    show_description = true
+    appearance = "light"
+    back_home_text = ".."
+    date_format = "2006-01-02"

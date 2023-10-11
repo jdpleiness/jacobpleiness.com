@@ -1,0 +1,28 @@
+[[entries]]
+title = "About"
+url = "about"
+
+[[entries]]
+title = "GitHub"
+url = "https://github.com/jdpleiness"
+
+[[entries]]
+title = "Twitter"
+url = "https://twitter.com/jacobpleiness"
+
+[[entries]]
+title = "LinkedIn"
+url = "https://linkedin.com/in/jacobpleiness"
+
+#[[entries]]
+#title = "Blog"
+#[entries.post_list]
+#limit = 5
+#show_more = true
+#show_more_text = "See more posts..."
+#show_more_url = "posts"
+#
+
+[[entries]]
+title = "RSS"
+url = "index.xml"
